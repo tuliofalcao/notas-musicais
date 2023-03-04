@@ -1,0 +1,16 @@
+Updating to 1.4.0
+
+  RuntimeError
+
+  Could not find poetry-1.4.0-linux.sha256sum file
+
+  at ~/.poetry/lib/poetry/console/commands/self/update.py:260 in _update
+      256│         try:
+      257│             r = urlopen(base_url + "/{}/{}".format(version, checksum))
+      258│         except HTTPError as e:
+      259│             if e.code == 404:
+    → 260│                 raise RuntimeError("Could not find {} file".format(checksum))
+      261│ 
+      262│             raise
+      263│ 
+      264│         checksum = r.read().decode().strip()
